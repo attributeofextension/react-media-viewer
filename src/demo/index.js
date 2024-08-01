@@ -1,6 +1,11 @@
 import React from "react";
+import { useSearchParam, MediaViewer } from "../react-media-viewer";
+
 
 const Demo = () => {
-    return <p>"Hello World!"</p>;
+    const resourceUrl = useSearchParam("view", true)
+    console.log(resourceUrl);
+
+    return <MediaViewer resourceUrl={resourceUrl} />;
 }
 export default Demo;
