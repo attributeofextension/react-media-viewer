@@ -1,0 +1,43 @@
+{
+  "name": "react-media-viewer",
+  "version": "0.1.0",
+  "description": "Uses native browser tools to display pdf, video and audio media",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev-serve": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attributeofextension/react-media-viewer.git"
+  },
+  "keywords": [
+    "media"
+  ],
+  "author": "Leah Carr (attributeofextension)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/attributeofextension/react-media-viewer/issues"
+  },
+  "homepage": "https://github.com/attributeofextension/react-media-viewer#readme",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^7.1.2",
+    "dotenv": "^16.4.5",
+    "html-webpack-plugin": "^5.6.0",
+    "prettier": "^3.3.3",
+    "sass-loader": "^16.0.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}
