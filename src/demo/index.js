@@ -3,9 +3,9 @@ import { useSearchParam, MediaViewer } from "../react-media-viewer";
 
 
 const Demo = () => {
-    const resourceUrl = useSearchParam("view", true)
-    console.log(resourceUrl);
-
-    return <MediaViewer resourceUrl={resourceUrl} />;
+    const [resourceURL, contentType] = useSearchParam("view", true)
+    console.log(resourceURL)
+    console.log(contentType)
+    return <MediaViewer resourceURL={resourceURL} contentType={contentType} />;
 }
 export default Demo;
