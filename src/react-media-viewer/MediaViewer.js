@@ -1,31 +1,35 @@
-import React, {useEffect, useRef, useState} from "react";
+import React from "react";
 
 
 
-export default function MediaViewer({ resourceUrl: resourceURL, contentType }) {
-    if(resourceURL !== null && contentType !== null) {
-        if(contentType.startsWith("audio") || !contentType.endsWith("webm")) {
-            return (
-                <audio
-                    src={resourceURL}
-                    preload={"metadata"}
-                    type={contentType}
-                    autoPlay={false}
-                    controls={true}
-                />
-            )
-        } else {
-            console.log(resourceURL);
-            console.log(contentType);
-            return (<video
-                src={resourceURL}
-                preload={"metadata"}
+export default function MediaViewer({ resourceURL, resourceType, isCrossOrigin }) {
+    if(!resourceURL || !resourceType) {
+        return <React.Fragment></React.Fragment>
+    }
+    if (resourceType.startsWith("audio")) {
+        return (
+            <audio
+                preload={"auto"}
                 autoPlay={false}
                 controls={true}
-                crossOrigin={"use-credentials"}
-            />)
-        }
+                crossOrigin={isCrossOrigin ? "use-credentials" : "anonymous"}
+            >
+                <source src={resourceURL} type={resourceType} />
+            </audio>
+        )
     }
-
+    if (resourceType.startsWith("video")) {
+        console.log("video")
+        return (
+            <video
+                preload={"auto"}
+                autoPlay={false}
+                controls={true}
+                crossOrigin={isCrossOrigin ? "use-credentials" : "anonymous"}
+            >
+                <source src={resourceURL} type={resourceType} />
+            </video>
+        )
+    }
     return <React.Fragment/>
 }
