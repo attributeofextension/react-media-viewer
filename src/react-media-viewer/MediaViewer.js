@@ -13,6 +13,7 @@ export default function MediaViewer({ resourceURL, resourceType, isCrossOrigin }
                 autoPlay={false}
                 controls={true}
                 crossOrigin={isCrossOrigin ? "use-credentials" : "anonymous"}
+                controlsList={"nodownload"}
             >
                 <source src={resourceURL} type={resourceType} />
             </audio>
@@ -25,6 +26,7 @@ export default function MediaViewer({ resourceURL, resourceType, isCrossOrigin }
                 preload={"auto"}
                 autoPlay={false}
                 controls={true}
+                controlsList={"nodownload"}
                 crossOrigin={isCrossOrigin ? "use-credentials" : "anonymous"}
             >
                 <source src={resourceURL} type={resourceType} />
